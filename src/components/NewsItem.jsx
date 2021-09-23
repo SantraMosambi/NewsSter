@@ -6,11 +6,11 @@ export default class NewsItem extends Component {
     return (
       <div className="my-3 ">
         <div className="card" style={{ width: "18rem" }}>
-          <img src={!imageUrl?"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7HjpHNuzVssA9WGGtdCI0kC6gnLmjbMVuw&usqp=CAU":imageUrl} className="card-img-top" alt="..." />
+          <img src={!imageUrl?"https://www.91-cdn.com/hub/wp-content/uploads/2021/09/iqoo-z5-launch-date-india-feat.jpg":imageUrl} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>
-            <a href={newsUrl} target="_blank" className="btn btn-primary">
+            <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-dark">
               Read More
             </a>
           </div>

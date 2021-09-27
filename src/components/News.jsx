@@ -25,7 +25,7 @@ export default class news extends Component {
   }
 
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=127d91833ca9454394ff122f6b3f5d30&page=1&pageSize=${this.props.page}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=127d91833ca9454394ff122f6b3f5d30&page=1&pageSize=${this.props.page}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -40,7 +40,7 @@ export default class news extends Component {
   nextUpdate = async () => {
     
     if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.page))) {
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=127d91833ca9454394ff122f6b3f5d30&page=${
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=127d91833ca9454394ff122f6b3f5d30&page=${
         this.state.page + 1
       }&pageSize=${this.props.page}`;
       this.setState({ loading: true });
@@ -57,7 +57,7 @@ export default class news extends Component {
 
   prevUpdate = async () => {
     
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=127d91833ca9454394ff122f6b3f5d30&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=127d91833ca9454394ff122f6b3f5d30&page=${
       this.state.page - 1
     }&pageSize=${this.props.page}`;
     this.setState({ loading: true });
@@ -74,7 +74,7 @@ export default class news extends Component {
   render() {
     return (
       <div className="container my-4">
-        <h1 className="text-center">NewsSter - Top Headlines</h1>
+        <h1 className="text-center" style={{margin: "40px"}}>NewsSter - Top Headlines </h1>
         {this.state.loading && <Spinner />}
         <div className="row">
           { !this.state.loading && this.state.articles.map((element) => {

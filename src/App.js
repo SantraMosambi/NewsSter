@@ -13,6 +13,8 @@ import NavBar from './components/NavBar';
 import News from './components/News';
 
 export default class App extends Component {
+  page=6
+  country="in"
   render() {
     return (
       <div>
@@ -20,13 +22,13 @@ export default class App extends Component {
         <NavBar/>
         
         <Switch>
-          <Route path="/"><News page={6} country="in" category="general"/> </Route>
-          <Route path="/business"><News page={6} country="in" category="business"/> </Route>
-          <Route path="/entertainment"><News page={6} country="in" category="entertainment"/> </Route>
-          <Route path="/health"><News page={6} country="in" category="health"/> </Route>
-          <Route path="/science"><News page={6} country="in" category="science"/> </Route>
-          <Route path="/about"><News page={6} country="in" category="sports"/> </Route>
-          <Route path="/technology"><News page={6} country="in" category="technology"/> </Route>
+          <Route exact path="/"><News key="general" page={this.page} country={this.country} category="general"/> </Route>
+          <Route exact path="/business"><News key="business" page={this.page} country={this.country} category="business"/> </Route>
+          <Route exact path="/entertainment"><News key="business" page={this.page} country={this.country} category="entertainment"/> </Route>
+          <Route exact path="/health"><News key="health" page={this.page} country={this.country} category="health"/> </Route>
+          <Route exact path="/science"><News key="science" page={this.page} country={this.country} category="science"/> </Route>
+          <Route exact path="/sports"><News key="sports" page={this.page} country={this.country} category="sports"/> </Route>
+          <Route exact path="/technology"><News key="technology" page={this.page} country={this.country} category="technology"/> </Route>
         
         </Switch>
         </Router>

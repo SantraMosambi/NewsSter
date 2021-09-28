@@ -28,7 +28,7 @@ export default class NavBar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link"  to="/home">Home</Link></li>
+                  <Link className="nav-link"  to="/">Home</Link></li>
                   <li className="nav-item">
                   <Link className="nav-link" to="/business">Business</Link></li>
                   <li className="nav-item">

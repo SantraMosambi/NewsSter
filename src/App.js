@@ -13,7 +13,7 @@ import NavBar from './components/NavBar';
 import News from './components/News';
 
 export default class App extends Component {
-  page=6
+  page=9
   country="in"
   render() {
     return (
